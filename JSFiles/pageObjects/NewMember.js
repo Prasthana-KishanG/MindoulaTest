@@ -1,0 +1,62 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const protractor_1 = require("protractor");
+class NewMember {
+    constructor() {
+        this.ml_addMember = protractor_1.element(protractor_1.by.xpath("//button[@id='member_action_button']"));
+        this.am_fname = protractor_1.element(protractor_1.by.id("member_firstname_text"));
+        this.am_mname = protractor_1.element(protractor_1.by.id("member_middle_text"));
+        this.am_lname = protractor_1.element(protractor_1.by.id("member_lastname_text"));
+        this.am_dob = protractor_1.element(protractor_1.by.id("member_dateofbirth_text"));
+        this.am_mobile = protractor_1.element(protractor_1.by.id("member_mobile_text"));
+        this.am_email = protractor_1.element(protractor_1.by.id("member_email_text"));
+        this.am_address = protractor_1.element(protractor_1.by.xpath("//input[@placeholder='Enter a location']"));
+        this.am_address_select = protractor_1.element(protractor_1.by.xpath("/*[contains(@class,'pac-container')]//div[contains(@class,'pac-item')]"));
+        this.am_hphone = protractor_1.element(protractor_1.by.id("member_home_number_text"));
+        this.am_ophone = protractor_1.element(protractor_1.by.id("member_office_number_text"));
+        this.am_submit = protractor_1.element(protractor_1.by.id("member_btn_submit"));
+        this.am_gender = protractor_1.element(protractor_1.by.xpath("//label[@id='mat-form-field-label-27']"));
+        this.am_bob = protractor_1.element(protractor_1.by.xpath("//input[@formcontrolname='birthDate']"));
+        this.m_referral_type = protractor_1.element(protractor_1.by.xpath("//mat-select[contains(@aria-label,'Type of Referral')]//parent::div[@class='mat-form-field-infix']"));
+        this.m_referral_type_dropdown = protractor_1.element(protractor_1.by.xpath("//span[@class='mat-option-text' and text()='$replaceToken$']"));
+        this.m_referral_ref_type_dropdown = protractor_1.element(protractor_1.by.xpath("//span[@class='mat-option-text' and contains(text(),'$replaceToken$')]"));
+        //this.gender="//mmr-single-select[@id='add-member-gender-select']/mat-form-field//div[@class='mat-form-field-infix']";
+        this.gender = "//mmr-single-select[@class='input-with-icon'][contains(.,'Gender *')]";
+        //this.marital_status="//mmr-single-select[@id='add-member-marital-select']/mat-form-field//div[@class='mat-form-field-flex']";
+        this.marital_status = " //mmr-single-select[@class='input-with-icon'][contains(.,'Marital Status')]";
+        this.am_gender_dropdown_str = "//div//mat-option//span//span[contains(text(),'$gender$')]";
+        this.am_marital_status_dropdown_str = "//div//mat-option//span//span[contains(text(),'$marital_status$')]";
+        this.m_addProgram = protractor_1.element(protractor_1.by.xpath("//div[text()=' Add Program ']//preceding-sibling::div[@class='circle-btn circle-btn--light circle-btn--large add-icon add-icon--large']"));
+        this.ap_radio_add_type = "//div[contains(text(),'$replaceToken$')]//ancestor::mat-radio-button//div[@class='mat-radio-container']";
+        this.ap_EMR_ID = protractor_1.element(protractor_1.by.xpath("//input[@placeholder='EMR ID']"));
+        this.ap_medica_ID = protractor_1.element(protractor_1.by.xpath("//input[@placeholder='Medicaid ID']"));
+        this.ap_alternate_identifier = protractor_1.element(protractor_1.by.xpath("//input[@placeholder='Alternate Identifier']"));
+        //this.ap_provider=element(by.xpath("//mmr-single-select[@ng-reflect-field_title='Provider']"));
+        this.ap_provider = protractor_1.element(protractor_1.by.xpath("//mmr-single-select[contains(.,'Provider')]"));
+        this.ap_provider_dropdown = "//span[@class='mat-option-text']//span[contains(text(),'$replaceToken$')]";
+        this.ap_identified_on = protractor_1.element(protractor_1.by.xpath("//input[@placeholder='Identified On']"));
+        this.ap_status = protractor_1.element(protractor_1.by.xpath("//mmr-single-select[@ng-reflect-field_title='Status']"));
+        this.ap_status = protractor_1.element(protractor_1.by.xpath("//mmr-single-select[contains(.,'Status *')]"));
+        this.ap_status_dropdown = "//span[contains(text(),'$replaceToken$')]";
+        this.ap_ins_note = protractor_1.element(protractor_1.by.xpath("//input[@placeholder='Insurance Note']"));
+        this.ap_save = protractor_1.element(protractor_1.by.xpath("//span[contains(text(),'Save')]//parent::button"));
+        this.ap_program = protractor_1.element(protractor_1.by.xpath("//mmr-single-select[contains(.,'Program *')]"));
+        //this.ap_program=element(by.xpath("//div[@class='mat-form-field-infix'][contains(.,'Program *')]"));
+        this.ap_program_dropdown = "//span[contains(text(),'$replaceToken$')]";
+        this.ap_practice = protractor_1.element(protractor_1.by.xpath("//mmr-single-select[contains(.,'Practice')]"));
+        this.ap_practice_dropdown = "//span[contains(text(),'$replaceToken$')]";
+        this.m_ct_Add = protractor_1.element(protractor_1.by.id("member_careteam_add_btn"));
+        this.m_ct_role = protractor_1.element(protractor_1.by.xpath("//mat-select[contains(@aria-label,'Select Role')]"));
+        this.m_ct_role_dropdown_str = "//span[@class='mat-option-text' and contains(text(),'$role$')]";
+        this.m_ct_member = protractor_1.element(protractor_1.by.xpath("//mat-select[contains(@aria-label,'Select Case Manager / Psychiatric Consultant')]"));
+        this.m_ct_member_dropdown_str = "//span[@class='mat-option-text' and contains(text(),'$member$')]";
+        this.m_ct_from_date = protractor_1.element(protractor_1.by.xpath("//input[@formcontrolname='startDate']"));
+        this.m_ct_to_date = protractor_1.element(protractor_1.by.xpath("//input[@formcontrolname='endDate']"));
+        this.m_ct_primary = protractor_1.element(protractor_1.by.xpath("//div[@class='mat-checkbox-inner-container']"));
+        this.m_ct_save = protractor_1.element(protractor_1.by.xpath("//span[contains(text(),'Save')]//parent::button"));
+        this.m_nm_selectaddress = protractor_1.element(protractor_1.by.xpath("//*[contains(@class,'pac-container')]//div[contains(@class,'pac-item')]"));
+        this.m_nm_useaddress = protractor_1.element(protractor_1.by.xpath("//button[@color='primary'][contains(.,'Use Address')]"));
+    }
+}
+exports.NewMember = NewMember;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTmV3TWVtYmVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vcGFnZU9iamVjdHMvTmV3TWVtYmVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsMkNBQStEO0FBRS9ELE1BQWEsU0FBUztJQW1EbEI7UUFFSSxJQUFJLENBQUMsWUFBWSxHQUFDLG9CQUFPLENBQUMsZUFBRSxDQUFDLEtBQUssQ0FBQyxzQ0FBc0MsQ0FBQyxDQUFDLENBQUM7UUFDNUUsSUFBSSxDQUFDLFFBQVEsR0FBQyxvQkFBTyxDQUFDLGVBQUUsQ0FBQyxFQUFFLENBQUMsdUJBQXVCLENBQUMsQ0FBQyxDQUFDO1FBQ3RELElBQUksQ0FBQyxRQUFRLEdBQUMsb0JBQU8sQ0FBQyxlQUFFLENBQUMsRUFBRSxDQUFDLG9CQUFvQixDQUFDLENBQUMsQ0FBQztRQUNuRCxJQUFJLENBQUMsUUFBUSxHQUFDLG9CQUFPLENBQUMsZUFBRSxDQUFDLEVBQUUsQ0FBQyxzQkFBc0IsQ0FBQyxDQUFDLENBQUM7UUFDckQsSUFBSSxDQUFDLE1BQU0sR0FBQyxvQkFBTyxDQUFDLGVBQUUsQ0FBQyxFQUFFLENBQUMseUJBQXlCLENBQUMsQ0FBQyxDQUFDO1FBQ3RELElBQUksQ0FBQyxTQUFTLEdBQUMsb0JBQU8sQ0FBQyxlQUFFLENBQUMsRUFBRSxDQUFDLG9CQUFvQixDQUFDLENBQUMsQ0FBQztRQUNwRCxJQUFJLENBQUMsUUFBUSxHQUFDLG9CQUFPLENBQUMsZUFBRSxDQUFDLEVBQUUsQ0FBQyxtQkFBbUIsQ0FBQyxDQUFDLENBQUM7UUFDbEQsSUFBSSxDQUFDLFVBQVUsR0FBQyxvQkFBTyxDQUFDLGVBQUUsQ0FBQyxLQUFLLENBQUMsMENBQTBDLENBQUMsQ0FBQyxDQUFDO1FBQzlFLElBQUksQ0FBQyxpQkFBaUIsR0FBQyxvQkFBTyxDQUFDLGVBQUUsQ0FBQyxLQUFLLENBQUMsd0VBQXdFLENBQUMsQ0FBQyxDQUFDO1FBQ25ILElBQUksQ0FBQyxTQUFTLEdBQUMsb0JBQU8s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
